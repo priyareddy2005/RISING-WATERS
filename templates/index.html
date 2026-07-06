@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Waters - Flood Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌊 Rising Waters</h1>
+
+    <h2>Flood Prediction System</h2>
+
+    <form action="/predict" method="POST">
+
+        <input type="number" step="any" name="annual_rainfall" placeholder="Annual Rainfall" required>
+
+        <input type="number" step="any" name="cloud_visibility" placeholder="Cloud Visibility" required>
+
+        <input type="number" step="any" name="jan" placeholder="January Rainfall" required>
+
+        <input type="number" step="any" name="feb" placeholder="February Rainfall" required>
+
+        <input type="number" step="any" name="mar" placeholder="March Rainfall" required>
+
+        <input type="number" step="any" name="apr" placeholder="April Rainfall" required>
+
+        <input type="number" step="any" name="may" placeholder="May Rainfall" required>
+
+        <input type="number" step="any" name="jun" placeholder="June Rainfall" required>
+
+        <input type="number" step="any" name="jul" placeholder="July Rainfall" required>
+
+        <input type="number" step="any" name="aug" placeholder="August Rainfall" required>
+
+        <input type="number" step="any" name="sep" placeholder="September Rainfall" required>
+
+        <input type="number" step="any" name="oct" placeholder="October Rainfall" required>
+
+        <input type="number" step="any" name="nov" placeholder="November Rainfall" required>
+
+        <input type="number" step="any" name="dec" placeholder="December Rainfall" required>
+
+        <button type="submit">Predict Flood</button>
+
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            <h3>{{ prediction }}</h3>
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
